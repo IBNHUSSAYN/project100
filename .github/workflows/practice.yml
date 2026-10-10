@@ -8,5 +8,16 @@ jobs:
     steps:
       - name: first step
         run: | 
-          echo "Good Morning DevOps Engineer"
-          echo "Last echoed message"
+          mkdir player
+          echo "Good Morning DevOps Engineer" >> player/greet.txt
+          echo "Last echoed message" >> name.txt
+          hostname
+      - name: second job
+        uses: actions/checkout@v7.1
+      - name: step 3
+        run: ls -la
+      - name: upload_file
+        uses: actions/upload_artifact@v7.1
+        with:
+          name: single_file
+          path: name.txt
