@@ -17,11 +17,11 @@ jobs:
       - name: step 3
         run: ls -la
       - name: upload_file
-        uses: actions/upload_artifact@v7
+        uses: actions/upload-artifact@v7
         with:
           name: single_file
           path: name.txt
       - name: download_artifact
-        uses: actions/download_artifact@v7
+        uses: actions/download-artifact@v7
         with:
           name: single_file
