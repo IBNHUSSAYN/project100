@@ -7,4 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: first step
-        run: echo "Good Morning DevOps Engineer"
+        run: | 
+          echo "Good Morning DevOps Engineer"
+          echo "Last echoed message"
