@@ -2,11 +2,20 @@ name: GUTHUB ACTION PRACTICE
 on:
   workflow_dispatch
 jobs:
-  job1:
-    name: testing
+  unit_tests:
+    name: Running Unit Test
     runs-on: ubuntu-latest
     steps:
-      - name: first step
-        run: | 
-          echo "Good Morning DevOps Engineer"
-          echo "Last echoed message"
+      - name: Checkout Code
+        uses: actions/checkout@v7
+      - name: set-up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.10'
+      - name: install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run Unit tetst
+        run: pytest -v
+          
